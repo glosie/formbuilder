@@ -1,0 +1,7 @@
+<div class="large-8 columns">
+    <label><%= @name %></label>
+    <textarea rows="5" id="<%= @id %>" placeholder="<%= @placeholder %>"></textarea>
+</div>
+<div class="form-delete">
+    <i class="general-enclosed foundicon-remove"></i>
+</div>

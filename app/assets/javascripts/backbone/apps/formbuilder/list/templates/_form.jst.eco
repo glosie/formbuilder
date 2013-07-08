@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="large-12 columns">
+        <h5><%= @name %></h5>
+        <div class="form-delete">
+            <i class="general-enclosed foundicon-remove"></i>
+        </div>
+    </div>
+</div>

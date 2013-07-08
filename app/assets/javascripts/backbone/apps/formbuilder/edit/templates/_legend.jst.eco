@@ -1,0 +1,4 @@
+<div class="form-delete">
+    <i class="general-enclosed foundicon-remove"></i>
+</div>
+<fieldset><legend><%= @name %></legend></fieldset>

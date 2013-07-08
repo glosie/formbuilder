@@ -1,0 +1,12 @@
+.breadcrumbs {
+    border-radius: 0;
+    border-top-width: 0;
+
+    ul {
+        margin-bottom: 0;
+
+        li:last-child {
+            padding-right: 0;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div id="edit-form">
+    <div id="title-region"></div>
+    <section>
+        <div class="row">
+            <div class="large-8 columns">
+                <div class="row">
+                    <h2 class="subheader"><%= @name %></h2>
+                </div>
+                <div class="row">
+                    <div id="form-region"></div>
+                </div>
+                <div id="form-buttons" class="right">
+                    <button type="button" data-form-button='cancel' class="button small secondary radius">Cancel</button>
+                    <button type="submit" data-form-button='submit' class="button small radius">Save</button>
+                </div>
+            </div>
+            <div id="palette-region" class="large-3 large-offset-1 columns"></div>
+        </div>
+    </section>
+</div>

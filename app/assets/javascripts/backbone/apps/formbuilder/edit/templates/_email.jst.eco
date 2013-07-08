@@ -1,0 +1,7 @@
+<div class="large-6 columns">
+    <label><%= @name %></label>
+    <input type="email" id="<%= @id %>" placeholder="<%= @placeholder %>">
+</div>
+<div class="form-delete">
+    <i class="general-enclosed foundicon-remove"></i>
+</div>

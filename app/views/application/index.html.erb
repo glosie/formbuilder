@@ -1,0 +1,14 @@
+<div id="wrap">
+    <section id="header-region"></section>
+    <section id="main-region"></section>
+    <section id="push"></section>
+</div>
+<section id="footer-region"></section>
+
+<%= javascript_tag do %>
+    $(function() {
+        FormBuilder.start({
+            environment: "<%= Rails.env %>"
+        });
+    });
+<% end %>

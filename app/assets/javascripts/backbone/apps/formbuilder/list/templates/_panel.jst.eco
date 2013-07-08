@@ -1,0 +1,6 @@
+<div class="left">
+    <button id="new-form" class="button radius small secondary">
+        <i class="general-enclosed foundicon-plus"></i>
+        Add
+    </button>
+</div>

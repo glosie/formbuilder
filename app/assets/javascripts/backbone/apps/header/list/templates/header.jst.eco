@@ -1,0 +1,37 @@
+<header>
+    <div class="contain-to-grid">
+        <nav class="top-bar">
+            <ul class="title-area">
+                <li class="name">
+                    <h1>
+                        <a href="/#/forms">
+                            <span id="logo">
+                                <i class="general foundicon-edit"></i>
+                            </span>
+                            FormBuilder
+                        </a>
+                    </h1>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li class="divider"></li>
+                    <li>
+                        <a href="/#/">
+                            <i class="general foundicon-graph"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="active">
+                        <a href="/#/">
+                            <i class="icon-tasks"></i>
+                            Forms
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</header>
