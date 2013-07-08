@@ -63,6 +63,7 @@
 
             .form-component {
                 @extend .row;
+                position: relative;
                 border-radius: 10px;
                 padding-top: 10px;
                 padding-bottom: 10px;
@@ -70,16 +71,48 @@
                 &:hover {
                     border: 1px dashed darken($secondary-color, 10%);
 
-                    .form-delete:hover {
-                        color: $alert-color;
-                        @include transition(color 0.6s linear);
+
+                    .field-delete {
+                        opacity: 1;
+
+                        &:hover,  {
+                            color: $alert-color;
+                        }
+                    }
+                    .field-edit {
+                        opacity: 1;
+
+                        &:hover {
+                            color: gray;
+                        }
                     }
                 }
 
-                .form-delete {
-                    @extend .right;
+                .field-delete {
+                    position: absolute;
+                    top: 5px;
+                    right: 0;
                     padding-right: 10px;
                     color: darken($secondary-color, 10%);
+                    opacity: 0;
+                    @include transition(all 0.6s linear);
+
+                    i {
+                        font-size: 20px;
+                    }
+                }
+                .field-edit {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 0;
+                    padding-right: 10px;
+                    color: darken($secondary-color, 10%);
+                    opacity: 0;
+                    @include transition(all 0.6s linear);
+
+                    i {
+                        font-size: 20px;
+                    }
                 }
             }
             .empty {
@@ -94,7 +127,7 @@
 }
 
 #palette-region {
-    margin-top: 60px;
+    margin-top: 35px;
     list-style-type: none;
     outline: none;
     cursor: pointer;
@@ -115,4 +148,7 @@
             padding-right: 10px;
         }
     }
+}
+#popover {
+    min-width: 400px;
 }

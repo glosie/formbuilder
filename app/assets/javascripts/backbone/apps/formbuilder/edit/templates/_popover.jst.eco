@@ -1,0 +1,13 @@
+<div id="#popover">
+    <label class='control-label'>Name</label>
+    <input class='input-large field'type='text' name="name" value="<%= @name %>" />
+    <label class='control-label'>Placeholder Text</label>
+    <input class='input-large field'type='text' name="placeholder" value="<%= @placeholder %>" />
+    <% if @options: %>
+    <label class='control-label'>Options</label>
+    <input class='input-large field'type='text' name="options" value="<%= @options %>" />
+    <% end %>
+    <div id="form-buttons" class="right">
+        <button class="button small radius update">Update</button>
+    </div>
+</div>

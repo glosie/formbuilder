@@ -28,14 +28,50 @@
       name = @model.templateName()
       "formbuilder/edit/_#{name}"
 
+    modelEvents:
+      "change"  : "render"
+
     events:
-      'drop'  : 'drop'
+      'drop'              : 'drop'
+      'click .field-edit' : 'showPopover'
+      'mouseleave'        : 'hidePopover'
 
     triggers:
-      "click .form-delete" : "form:field:delete"
+      "click .field-delete" : "form:field:delete"
 
     drop: (event, index) ->
       $(@el).trigger 'update-sort', [@model, index]
+
+    showPopover: (e) ->
+      e.preventDefault()
+      e.stopPropagation()
+      popoverView = new Edit.FieldSettings
+        model: @model
+      popoverView.render()
+      content = popoverView.el
+      @$(".field-edit").popover({html: 'true', title: @model.get('name'), content: content, placement: 'left' });
+      @$(".field-edit").popover('show')
+      @listenTo popoverView, "field:update", ->
+        @trigger "field:updated", @model
+
+    hidePopover: (event) ->
+      $(".field-edit").popover('destroy')
+
+
+  class Edit.FieldSettings extends App.Views.ItemView
+    template: "formbuilder/edit/_popover"
+
+    events:
+      "click button.update" : "updateField"
+
+    updateField: (e) ->
+      name = @$('input[name="name"]').val()
+      placeholder = @$('input[name="placeholder"]').val()
+      options = @$('input[name="options"]').val()
+      @model.set 'name', name
+      @model.set 'placeholder', placeholder
+      @model.set 'options', options
+      @trigger 'field:update', @model
 
   class Edit.Form extends App.Views.CompositeView
     id: 'form'

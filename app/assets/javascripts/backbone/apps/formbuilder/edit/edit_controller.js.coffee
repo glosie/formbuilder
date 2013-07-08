@@ -52,6 +52,9 @@
         model.destroy()
         form.set 'fields_attributes', fields.toJSON()
 
+      @listenTo formView, "childview:field:updated", (child) ->
+        form.set 'fields_attributes', fields.toJSON()
+
       @layout.formRegion.show formView
 
     paletteRegion: (palette) ->

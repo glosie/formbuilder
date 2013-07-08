@@ -5,6 +5,9 @@
     <label for="<%= option %>" class="subheader"><input type="checkbox" id="<%= @slugify("#{@name}-#{options.indexOf(option)}") %>"><%= option %></label>
     <% end %>
 </div>
-<div class="form-delete">
+<div class="field-delete">
     <i class="general-enclosed foundicon-remove"></i>
+</div>
+<div class="field-edit">
+    <i class="general-enclosed foundicon-settings"></i>
 </div>

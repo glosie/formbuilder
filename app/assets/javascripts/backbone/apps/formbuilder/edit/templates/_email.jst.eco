@@ -2,6 +2,9 @@
     <label><%= @name %></label>
     <input type="email" id="<%= @id %>" placeholder="<%= @placeholder %>">
 </div>
-<div class="form-delete">
+<div class="field-delete">
     <i class="general-enclosed foundicon-remove"></i>
+</div>
+<div class="field-edit">
+    <i class="general-enclosed foundicon-settings"></i>
 </div>
