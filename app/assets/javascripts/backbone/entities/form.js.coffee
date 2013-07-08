@@ -59,6 +59,9 @@
     getFormFields: (form) ->
       new Entities.FormFields form.get 'fields_attributes'
 
+    addFormField: (fields, field, index) ->
+      fields.addModel(field, index)
+
   App.reqres.setHandler "form:entities", ->
     API.getFormList()
 
@@ -70,3 +73,6 @@
 
   App.reqres.setHandler "form:fields:entities", (form) ->
     API.getFormFields form
+
+  App.reqres.setHandler "form:fields:add", (collection, model, index) ->
+    API.addFormField(collection, model, index)

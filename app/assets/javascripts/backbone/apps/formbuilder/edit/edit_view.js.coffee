@@ -59,11 +59,12 @@
           $('#form .ui-draggable').remove()
           # trigger sort
           ui.item.trigger 'drop', ui.item.index()
-        receive: (event, ui) =>
-          @trigger "form:component:add", @cid, @index
         beforeStop: (event, ui) =>
           @cid = ui.item.attr 'data-cid'
           @index = ui.item.index()
+        receive: (event, ui) =>
+          # component dragged from palette
+          @trigger "form:component:add", @cid, @index
 
   class Edit.PaletteComponent extends App.Views.ItemView
     template: "formbuilder/edit/_palette_component"
@@ -73,7 +74,7 @@
       $(@el).draggable
         connectToSortable: $('.ui-sortable')
         helper: "clone"
-        opacity: 0.75
+        opacity: 0.85
       .attr 'data-cid', @model.cid
 
 

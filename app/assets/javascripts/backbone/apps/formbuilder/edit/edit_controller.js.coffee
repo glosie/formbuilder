@@ -33,29 +33,22 @@
       formView = @getFormView form, fields
 
       @listenTo formView, "form:component:add", (cid, index) ->
-        # empty collection fix
-        index = 0 if fields.length == 0
-
+        index = 0 if fields.length == 0  ## empty collection fix
         model = palette.get(cid).toJSON()
         model.order = index
-        fields.addModel model, index
+        App.request "form:fields:add", fields, model, index
         form.set 'fields_attributes', fields.toJSON()
         @show @layout
 
       @listenTo formView, "form:component:sort", (model, index) ->
         fields.remove(model)
-
-        fields.addModel model, index
-
+        App.request "form:fields:add", fields, model, index
         form.set 'fields_attributes', fields.toJSON()
         @show @layout
 
       @listenTo formView, "childview:form:field:delete", (child, args) ->
-        console.log "delete field"
         model = args.model
         fields.remove(model)
-        console.log model.id
-        window.model = model
         model.destroy()
         form.set 'fields_attributes', fields.toJSON()
 
