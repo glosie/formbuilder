@@ -1,6 +1,6 @@
-<div class="large-6 columns">
+<div class="large-8 columns">
     <label><%= @name %></label>
-    <input type="text" placeholder="<%= @placeholder %>">
+    <input type="text" class="large-9" placeholder="<%= @placeholder %>">
 </div>
 <div class="field-delete">
     <i class="general-enclosed foundicon-remove"></i>

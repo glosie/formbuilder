@@ -4,4 +4,4 @@
 <div class="field-edit">
     <i class="general-enclosed foundicon-settings"></i>
 </div>
-<fieldset><legend><%= @name %></legend></fieldset>
+<fieldset class="large-10"><legend><%= @name %></legend></fieldset>
