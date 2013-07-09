@@ -1,7 +1,7 @@
 <div id="#popover">
     <label class='control-label'>Name</label>
     <input class='input-large field'type='text' name="name" value="<%= @name %>" />
-    <% if @component_type is "text" or @component_type is "textarea" or @component_type is "textarea" : %>
+    <% if @component_type is "textinput" or @component_type is "textarea" or @component_type is "email" : %>
     <label class='control-label'>Placeholder Text</label>
     <input class='input-large field'type='text' name="placeholder" value="<%= @placeholder %>" />
     <% end %>
