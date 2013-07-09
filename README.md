@@ -12,3 +12,7 @@ to get started
 then   
 
     rails server
+    
+or
+
+    thin start -D
