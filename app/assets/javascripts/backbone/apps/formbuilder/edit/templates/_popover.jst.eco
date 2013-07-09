@@ -4,8 +4,7 @@
     <% if @component_type is "textinput" or @component_type is "textarea" or @component_type is "email" : %>
     <label class='control-label'>Placeholder Text</label>
     <input class='input-large field'type='text' name="placeholder" value="<%= @placeholder %>" />
-    <% end %>
-    <% if @options: %>
+    <% else if @component_type isnt "legend": %>
     <label class='control-label'>Options</label>
     <textarea class='input-large field'type='text' style="min-height: 150px" name="options"><%= @options %></textarea>
     <% end %>
