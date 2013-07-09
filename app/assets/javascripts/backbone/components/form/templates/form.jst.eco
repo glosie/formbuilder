@@ -1,5 +1,5 @@
 <% console.info "form options", @ %>
-
+<div class="panel radius">
     <div id="form-content-region"></div>
     <% if @footer: %>
         <footer>
@@ -14,3 +14,4 @@
             <% end %>
         </footer>
     <% end %>
+</div>
