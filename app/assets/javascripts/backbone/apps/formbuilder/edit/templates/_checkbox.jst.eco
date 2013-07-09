@@ -1,6 +1,6 @@
 <div class="large-4 columns">
     <label><%= @name %></label>
-    <% options = @options.split(",") %>
+    <% options = @options.split("\n") %>
     <% for option in options: %>
     <label for="<%= option %>" class="subheader"><input type="checkbox" id="<%= @slugify("#{@name}-#{options.indexOf(option)}") %>"><%= option %></label>
     <% end %>

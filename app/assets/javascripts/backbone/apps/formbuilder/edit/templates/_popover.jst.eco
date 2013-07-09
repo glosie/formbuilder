@@ -1,11 +1,13 @@
 <div id="#popover">
     <label class='control-label'>Name</label>
     <input class='input-large field'type='text' name="name" value="<%= @name %>" />
+    <% if @component_type is "text" or @component_type is "textarea" or @component_type is "textarea" : %>
     <label class='control-label'>Placeholder Text</label>
     <input class='input-large field'type='text' name="placeholder" value="<%= @placeholder %>" />
+    <% end %>
     <% if @options: %>
     <label class='control-label'>Options</label>
-    <input class='input-large field'type='text' name="options" value="<%= @options %>" />
+    <textarea class='input-large field'type='text' style="min-height: 150px" name="options"><%= @options %></textarea>
     <% end %>
     <div id="form-buttons" class="right">
         <button class="button small radius update">Update</button>

@@ -67,7 +67,7 @@
     updateField: (e) ->
       name = @$('input[name="name"]').val()
       placeholder = @$('input[name="placeholder"]').val()
-      options = @$('input[name="options"]').val()
+      options = @$('textarea[name="options"]').val()
       @model.set 'name', name
       @model.set 'placeholder', placeholder
       @model.set 'options', options
