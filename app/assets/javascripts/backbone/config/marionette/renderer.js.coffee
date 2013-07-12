@@ -9,13 +9,8 @@ do (Marionette) ->
       path(data)
 
     getTemplate: (template) ->
-      for path in [template]
-        temp = template.split("/")
-        temp.splice(-1, 0, "templates")
-        path = temp.join("/")
-        for lookup in @lookups
-          return JST[lookup + path] if JST[lookup + path]
-    # getTemplate: (template) ->
-    #   for path in [template, template.split("/").insertAt(-1, "templates").join("/")]
-    #     for lookup in @lookups
-    #       return JST[lookup + path] if JST[lookup + path]
+      template = template.split("/")
+      template.splice(-1, 0, "templates")
+      path = template.join("/")
+      for lookup in @lookups
+        return JST[lookup + path] if JST[lookup + path]
