@@ -67,6 +67,7 @@
                 border-radius: 10px;
                 padding-top: 10px;
                 padding-bottom: 10px;
+                border: 1px solid darken(#fff, 5%);
 
                 &:hover {
                     border: 1px dashed darken($secondary-color, 10%);
