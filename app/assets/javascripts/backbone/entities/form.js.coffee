@@ -1,18 +1,21 @@
 @FormBuilder.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
 
   class Entities.FormComponent extends Entities.Model
-    urlRoot: -> Routes.fields_path()
+    url: -> Routes.form_field_path(@get('form_id'), @get('id'))
     defaults:
       placeholder: "Placeholder Text"
       helptext: "help text"
       required: false
       options: ""
 
+    initialize: ->
+      window.g = @
+
     templateName: ->
       @get('component_type').replace(/\W/g,'').toLowerCase()
 
     getOptions: ->
-      @.attributes.options.value
+      @attributes.options.value
 
     setOptions: (name, value) ->
       options = @get 'options'
