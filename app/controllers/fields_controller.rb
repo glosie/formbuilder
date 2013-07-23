@@ -8,7 +8,6 @@ class FieldsController < ApplicationController
   end
 
   def destroy
-
     field = Field.find params[:id]
 
     field.destroy

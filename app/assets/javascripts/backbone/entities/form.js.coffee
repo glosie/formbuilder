@@ -8,9 +8,6 @@
       required: false
       options: ""
 
-    initialize: ->
-      window.g = @
-
     templateName: ->
       @get('component_type').replace(/\W/g,'').toLowerCase()
 
