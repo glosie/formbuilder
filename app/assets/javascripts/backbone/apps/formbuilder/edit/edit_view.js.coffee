@@ -34,7 +34,6 @@
     events:
       'drop'              : 'drop'
       'click .field-edit' : 'showPopover'
-      'mouseleave'        : 'hidePopover'
 
     triggers:
       "click .field-delete" : "form:field:delete"
@@ -45,6 +44,7 @@
     showPopover: (e) ->
       e.preventDefault()
       e.stopPropagation()
+      $(".field-edit").popover('destroy')
       popoverView = new Edit.FieldSettings
         model: @model
       popoverView.render()
@@ -53,9 +53,6 @@
       @$(".field-edit").popover('show')
       @listenTo popoverView, "field:update", ->
         @trigger "field:updated", @model
-
-    hidePopover: (event) ->
-      $(".field-edit").popover('destroy')
 
 
   class Edit.FieldSettings extends App.Views.ItemView
@@ -82,9 +79,13 @@
 
     events:
       'update-sort' : 'updateSort'
+      'mouseleave'  : 'hidePopover'
 
     updateSort: (event, model, position) ->
       @trigger "form:component:sort", model, position
+
+    hidePopover: (event) ->
+      $(".field-edit").popover('destroy')
 
     onShow: ->
       $(@itemViewContainer).sortable
